@@ -1,12 +1,10 @@
-import { INCREMENT, DECREMENT, RESET } from "../actions/count";
-
 const counter = function(state = 0, action) {
   switch (action.type) {
-    case INCREMENT:
+    case "INCREMENT":
       return state + 1;
-    case DECREMENT:
+    case "DECREMENT":
       return state - 1;
-    case RESET:
+    case "RESET":
       return 0;
     default:
       return state;
