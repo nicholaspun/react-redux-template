@@ -1,12 +1,27 @@
-import React, { Component } from 'react';
-import './app.css';
+// Redux Functions
+import { connect } from "react-redux";
 
-export default class App extends Component {
-  render () {
-    return (
-      <div style={{ textAlign: "center"}}>
-        <h1 className="title">Hello World!</h1>
-      </div>
-    )
+// Actions
+import { increment, decrement, reset } from "../actions/count";
+
+// Components
+import Main from './main';
+
+const mapStateToProps = (state) => {
+  return {
+    counter: state.counter,
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: () => dispatch(increment()),
+    decrement: () => dispatch(decrement()),
+    reset: () => dispatch(reset()),
+  }
+}
+
+// Connects state and dispatch as props to our Main component
+const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+
+export default App;
