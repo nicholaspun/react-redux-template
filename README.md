@@ -7,6 +7,13 @@ Making a reusable template with the following features:
 * Has Hot Module Replacement
 * Deploys to Github Pages (Or Firebase, haven't fully decided yet)
 
+## Usage
+Uses yarn. Running *yarn install* will install all dependencies and *yarn start* will start the *webpack-dev-server*
+```shell
+yarn install
+yarn start
+```
+
 ## Source Directory File Structure
 ```
 |-- src/
