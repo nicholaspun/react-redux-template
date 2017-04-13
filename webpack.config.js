@@ -18,7 +18,7 @@ module.exports = {
   ],
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].[hash].js'
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -51,5 +51,14 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: function (module) {
+           return module.context && module.context.indexOf('node_modules') !== -1;
+        }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest'
+    })
   ]
 }
