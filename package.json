@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack -p",
+    "build": "webpack -p --env.prod",
     "pre:build": "rimraf dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
