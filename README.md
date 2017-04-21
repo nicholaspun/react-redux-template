@@ -5,7 +5,7 @@ Making a reusable template with the following features:
 * For development in React & Redux
 * Utilizes Webpack
 * Has Hot Module Replacement
-* Deploys to Github Pages (Or Firebase, haven't fully decided yet)
+* Deploys to Github Pages
 
 ## Usage
 Uses yarn. Running *yarn install* will install all dependencies and *yarn start* will start the *webpack-dev-server*
@@ -46,6 +46,5 @@ This file system is structured around keeping separate features modularized:
 * *index.html* is our entry point for the app.  
 
 ## Todo
-- [ ] Create deployment process
 - [ ] Considering adding React Router into the template
 - [ ] Considering using webpack-dev-middleware and webpack-hot-middleware over React Hot Loader for increased customizability
