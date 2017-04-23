@@ -4,6 +4,7 @@ const webpack = require('webpack');
 // Plugins
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 // TODO: ExtractTextPlugin -- for production build
 // TODO: Radium
@@ -45,8 +46,7 @@ module.exports = function( env = {} ){
       new HtmlWebpackPlugin({
         template: './index.html'
       }),
-
-
+      new Dotenv();
     ]
   }
 

@@ -6,6 +6,7 @@ Making a reusable template with the following features:
 * Utilizes Webpack
 * Has Hot Module Replacement
 * Deploys to Github Pages
+* Environment Variables can be stored in a *.env* file (See Below)
 
 ## Usage
 Uses yarn. Running *yarn install* will install all dependencies and *yarn start* will start the *webpack-dev-server*
@@ -44,6 +45,18 @@ This file system is structured around keeping separate features modularized:
 * *index.js* wraps the app in the necessary *AppContainer* (for HMR) and the *Provider* (for Redux)
 * *store.js* defines the store for the app
 * *index.html* is our entry point for the app.  
+
+## Environment Variables
+The *dotenv-webpack* plugin has been included in the webpack.
+Usage:
+```
+// .env file
+API_KEY=supersecretkey
+```
+```
+// file.js
+console.log(process.env.API_KEY); //supersecretkey
+```
 
 ## Todo
 - [ ] Considering adding React Router into the template
